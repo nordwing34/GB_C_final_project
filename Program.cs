@@ -1,15 +1,17 @@
 ﻿/*
 Итоговый проект
-
 Написать программу, которая из имеющегося массива строк формирует массив из строк, 
 длина которых меньше либо равна 3 символа.
 */
 
 string[] myStrArray = new string[] {
-	"Строка Раз",
-	"Строка Два",
-	"Строка Три",
-	"Строка Четыре"
+	"Hello world!",
+	"Пять",
+	"34hdtUY",
+	"из имеющегося массива строк",
+	"5",
+	"Строка Четыре",
+	"Контрольная работа"
 };
 
 System.Console.Clear();
@@ -18,11 +20,10 @@ GetSourceArray(myStrArray);
 System.Console.WriteLine(String.Empty);
 
 System.Console.Write("Введите длину строки ");
-int lengthStr = SetNumber(1, 8, "от 1 до 8: ");
-// System.Console.WriteLine(lengthStr);
+int lengthStr = SetNumber(1, 30, "от 1 до 30: ");
 System.Console.WriteLine(String.Empty);
 
-System.Console.WriteLine($"Из них строки с длиной не более {lengthStr} символов: ");
+System.Console.WriteLine($"Строки с длиной не более {lengthStr} символов: ");
 GetDestArray(lengthStr, myStrArray);
 
 
@@ -54,6 +55,10 @@ void GetSourceArray(string[] sourceArr){
 
 // Функция выводит в консоль строки массива, удовлетворяющие условию
 void GetDestArray(int maxStr, string[] destArray){
-	System.Console.WriteLine("ИТОГ: " + lengthStr);
+	foreach (var item in destArray){
+		if(item.Length <= maxStr){
+			System.Console.WriteLine(item);
+		}
+	}
 }
 
